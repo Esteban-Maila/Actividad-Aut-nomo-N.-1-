@@ -1,0 +1,54 @@
+Universidad de las Fuerzas Armadas “ESPE”
+Actividad Autónomo N.° 1 Primer Parcial
+Nombre: Esteban Maila
+NRC: 1322
+Fecha: 13/12/2024
+
+Informe del Proceso de Desarrollo del Proyecto: Gestión de Parqueadero
+Objetivo del Proyecto: El propósito de este proyecto es crear un sistema para gestionar un parqueadero de vehículos, con funcionalidades para registrar, consultar, actualizar y mostrar vehículos registrados.
+
+Pasos del Desarrollo:
+
+1.	Creación del Proyecto en NetBeans:
+o	Se crea un nuevo proyecto en NetBeans con el nombre GestionParqueadero, asegurándose de desmarcar la opción "Create Main Class" para evitar la creación automática de la clase principal.
+
+2.	Desarrollo de las Clases del Programa:
+o	Vehiculo.java:
+	Se define la clase Vehiculo con atributos como placa, marca, modelo y propietario. Incluye un constructor para inicializar estos valores y un método toString para representar el vehículo en formato de texto.
+o	Parqueadero.java:
+	Se crea la clase Parqueadero, que gestiona un ArrayList de objetos Vehiculo. Esta clase tiene métodos para registrar, consultar, actualizar y mostrar vehículos. Utiliza los métodos de la clase Vehiculo para manipular los datos de los vehículos.
+o	Main.java:
+	La clase Main es la interfaz de usuario en consola. Muestra un menú que permite al usuario elegir entre varias opciones, como registrar un vehículo, consultar un vehículo por placa, actualizar los datos de un vehículo o mostrar todos los vehículos registrados.
+
+3.	Ejecución del Proyecto:
+o	Al ejecutar el programa desde la clase Main, el usuario puede interactuar con el sistema mediante la consola. El menú de opciones permite realizar las operaciones correspondientes en el parqueadero, y el programa continuará ejecutándose hasta que el usuario decida salir.
+
+
+UML
+-------------------+        +-------------------+
+|     Vehiculo      |        |    Parqueadero    |
++-------------------+        +-------------------+
+| - placa: String   |        | - vehiculos: ArrayList<Vehiculo> |
+| - marca: String   |        +-------------------+
+| - modelo: String  |        | + registrarVehiculo(placa, marca, modelo, propietario): void |
+| - propietario: String |    | + consultarVehiculo(placa): void |
++-------------------+        | + actualizarVehiculo(placa, nuevaMarca, nuevoModelo, nuevoPropietario): void |
+| + getPlaca(): String |      | + mostrarVehiculos(): void |
+| + setMarca(marca): void |   +-------------------+
+| + setModelo(modelo): void |
+| + setPropietario(propietario): void |
+| + toString(): String        |
++-------------------+        +-------------------+
+               |                           |
+               +---------------------------+
+                          |
+                    +-------------+
+                    |    Main     |
+                    +-------------+
+                     | + main(args): void |
+                    +-------------+
+
+   Explicación del UML:
+•	Vehiculo: Representa a un vehículo con atributos básicos como placa, marca, modelo y propietario. Contiene métodos para obtener estos datos (getPlaca()), modificarlos (setMarca(), setModelo(), setPropietario()), y una representación en texto (toString()).
+•	Parqueadero: Gestiona una lista de vehículos. Ofrece métodos para registrar vehículos (registrarVehiculo()), consultar vehículos por placa (consultarVehiculo()), actualizar la información de un vehículo (actualizarVehiculo()), y mostrar todos los vehículos registrados (mostrarVehiculos()).
+•	Main: Es el punto de entrada del programa, donde se gestiona la interacción con el usuario. Presenta un menú en consola para que el usuario seleccione una opción para interactuar con el sistema de parqueadero.
